@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Badminton Pro Shop — Cửa Hàng Cầu Lông</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🏸 BADMINTON PRO</div>
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 Giỏ hàng (<span id="cart-count">0</span>)
+    </button>
+  </header>
+
+  <main class="container">
+    <h2>Danh Sách Sản Phẩm</h2>
+    <div id="product-list" class="product-grid">
+      <p>Đang tải sản phẩm từ máy chủ...</p>
+    </div>
+  </main>
+
+  <!-- Ngăn kéo Giỏ hàng & Thanh toán -->
+  <aside id="cart-drawer" class="cart-drawer hidden">
+    <div class="cart-header">
+      <h3>Giỏ Hàng Của Bạn</h3>
+      <button onclick="toggleCart()">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Tạm tính:</span>
+        <strong id="cart-total">0 ₫</strong>
+      </div>
+      <button class="checkout-btn" onclick="checkoutOrder()">Thanh Toán Đơn Hàng (COD)</button>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
