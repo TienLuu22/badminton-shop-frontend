@@ -82,9 +82,9 @@ async function loadCart() {
               <small>${item.sku} — ${formatVND(price)}</small>
             </div>
             <div class="qty-controls">
-              <button onclick="updateQty('${item._id}', ${item.quantity - 1})">-</button>
+              <button onclick="updateQty('${item.sku}', ${item.quantity - 1})">-</button>
               <span>${item.quantity}</span>
-              <button onclick="updateQty('${item._id}', ${item.quantity + 1})">+</button>
+              <button onclick="updateQty('${item.sku}', ${item.quantity + 1})">+</button>
             </div>
           </div>
         `;
@@ -95,8 +95,8 @@ async function loadCart() {
 }
 
 // 4. Tăng / giảm số lượng món trong giỏ
-async function updateQty(itemId, newQty) {
-  await fetch(`${API_BASE}/carts/${CURRENT_USER_ID}/items/${itemId}`, {
+async function updateQty(sku, newQty) {
+  await fetch(`${API_BASE}/carts/${CURRENT_USER_ID}/items/${sku}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ quantity: newQty })
