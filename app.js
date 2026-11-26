@@ -1,4 +1,4 @@
-const API_URL = 'https://tlb-badminton.onrender.com/api';
+const API_BASE = 'https://tlb-badminton.onrender.com/api';
 // Tạm dùng ID khách hàng mẫu có sẵn trong DB (sau sẽ lấy từ localStorage khi đăng nhập)
 const CURRENT_USER_ID = '6af70159d9c7686deb9f34bb';
 
